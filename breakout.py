@@ -5,6 +5,7 @@ from config import *
 intents = discord.Intents(members=True, voice_states=True, messages=True, guilds=True)
 client = discord.Client(intents=intents)
 
+
 @client.event
 async def on_ready():
     print('Logged in')
@@ -12,19 +13,21 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
-    args = message.content.split()
-    command = args[0]
+    if message.content.startswith('/breakout') and message.author.id == ME:
+
+        args = message.content.split()
     
-    #default number of groups is 3
-    try: 
-        groups = int(args[1])
-    except IndexError: 
-        groups = 3
-    
-    if command.startswith('/breakout') and message.author.id == ME:
+        #default number of groups is 3
+        try: 
+            groups = int(args[1])
+        except IndexError: 
+            groups = 3
 
         #all members in same vc as me
         victims = message.author.voice.channel.members
+
+        #shuffle victims to make sure its more random
+        random.shuffle(victims)
 
         #list of all voice channels
         channels = message.guild.voice_channels
@@ -41,5 +44,4 @@ async def on_message(message):
             print ("moving %s to %s" % (v, index))
             await v.edit(voice_channel=channels[rooms[index]])    
             i = i+1
-
 client.run(TOKEN)
