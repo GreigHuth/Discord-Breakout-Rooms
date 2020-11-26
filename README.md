@@ -11,7 +11,7 @@ The bot will then randomly and evenly distribute the users into different voice 
 
 The only dependency needed is discord.py which can be installed from [here](https://discordpy.readthedocs.io/en/latest/intro.html). 
 
-Currently the bot will only work if it has the `Administrator` box checked in its role settings, i'm looking into try and work around this but for now, since the bot doesnt touch anything sensitve, it will be okay.
+Currently the bot will only work if it has the `Administrator` permission checked in its role settings, i'm looking into finding a  workaround for this but for now, since the bot doesnt touch anything sensitve, it will be okay.
 
 No other special permissions are needed. Rename config-template.py to config.py and add the relevant information and you're good to go.
 
