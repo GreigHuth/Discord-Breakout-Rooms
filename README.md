@@ -13,6 +13,6 @@ The only dependency needed is discord.py which can be installed from [here](http
 
 Currently the bot will only work if it has the `Administrator` permission checked in its role settings, i'm looking into finding a  workaround for this but for now, since the bot doesnt touch anything sensitve, it will be okay.
 
-No other special permissions are needed. Rename config-template.py to config.py and add the relevant information and you're good to go.
+Rename config-template.py to config.py and add the relevant information and you're good to go.
 
 If there are any bugs or if you have any suggests you are free to make a PR or annoy me.
